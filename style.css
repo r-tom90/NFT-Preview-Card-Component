@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --primary-background-color: hsl(217, 54%, 11%);
+  --primary-card-background-color: hsl(216, 50%, 16%);
+  --card-border-line-color: hsl(215, 32%, 27%);
+  --title-color: hsl(0, 0%, 100%);
+  ---font-color-1: hsl(215, 51%, 70%);
+  --font-color-2: hsl(178, 100%, 50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  border: 1px solid black;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--primary-background-color);
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+a {
+  color: var(--title-color);
+  cursor: pointer;
+}
+
+h3 {
+  color: var(--font-color-2);
+}
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 18px;
+  color: var(---font-color-1);
+  line-height: 1.5em;
+}
+
+.container {
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: 5rem auto;
+  width: 400px;
+  max-height: auto;
+  padding: 25px 25px 15px 25px;
+  border-radius: 20px;
+  border: 1px solid var(--card-border-line-color);
+  background-color: var(--primary-card-background-color);
+}
+
+.image-container {
+  position: relative;
+}
+
+.nft-img {
+  width: 100%;
+  border-radius: 15px;
+  max-height: auto;
+  /* opacity: 1; */
+}
+
+.product-info {
+  width: 100%;
+}
+
+.auction-info {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.live-info {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.author {
+  width: 98%;
+  border-top: 1px solid var(---font-color-1);
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-top: 7px;
+}
+
+.creator-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--title-color);
+  border-radius: 2.5rem;
+  margin-top: 0.65rem;
+  margin-right: 1rem;
+}
+
+p.creator-info {
+  margin-top: 1rem;
+}
+
+/* Hover effect changes */
+
+h1:hover,
+a:hover {
+  color: var(--font-color-2);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 1%;
+  left: 0;
+  right: 0;
+  background-color: hsla(178, 100%, 50%, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  border-radius: 15px;
+  opacity: 0;
+}
+
+.overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.overlay-icon {
+  margin: auto;
+}
+
+/* Frontend Mentor Styling */
+.attribution {
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--title-color);
+}
+
+/* Bounce In Animation added, but not required */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+main {
+  animation: bounceIn 2s;
+}
+
+@keyframes colorPalette {
+  0% {
+    color: #ee6055;
+  }
+  25% {
+    color: #60d394;
+  }
+  50% {
+    color: #aaf683;
+  }
+  75% {
+    color: #ffd97d;
+  }
+  100% {
+    color: #ff9b85;
+  }
+}
+
+footer a {
+  animation: colorPalette 3s ease-in-out infinite;
+  /* animation-name: colorPalette;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear; */
+  /* linear is enabled default, it’s not necessary to add it make it work but it can make your code more expressive */
+}
